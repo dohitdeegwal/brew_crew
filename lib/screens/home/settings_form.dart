@@ -36,18 +36,18 @@ class _SettingsFormState extends State<SettingsForm> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                Text(
+                const Text(
                   'Update your brew settings.',
                   style: TextStyle(fontSize: 18.0),
                 ),
-                SizedBox(height: 20.0,),
+                const SizedBox(height: 20.0,),
                 TextFormField(
                   initialValue: userData?.name,
                   decoration: textInputDecoration,
                   validator: (val) => val == null || val.isEmpty ? 'Please enter a name' : null,
                   onChanged: (val) => setState(() => _currentName = val),
                 ),
-                SizedBox(height: 20.0,),
+                const SizedBox(height: 20.0,),
                 // dropdown
                 DropdownButtonFormField(
                   decoration: textInputDecoration,
@@ -71,10 +71,10 @@ class _SettingsFormState extends State<SettingsForm> {
                 ),
                 // slider
                 ElevatedButton(
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Colors.pink),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Update',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -93,7 +93,7 @@ class _SettingsFormState extends State<SettingsForm> {
             ),
           );
         } else {
-          return Loading();
+          return const Loading();
         }
 
       }
